@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In/Sign Up Form</title>
+  <style>
+    /* Same CSS as the previous one */
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #000;
+    }
+
+    section {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2px;
+      flex-wrap: wrap;
+      overflow: hidden;
+    }
+
+    section::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(#000,#0f0,#000);
+      animation: animate 5s linear infinite;
+    }
+
+    @keyframes animate {
+      0% {
+        transform: translateY(-100%);
+      }
+      100% {
+        transform: translateY(100%);
+      }
+    }
+
+    section span {
+      position: relative;
+      display: block;
+      width: calc(6.25vw - 2px);
+      height: calc(6.25vw - 2px);
+      background: #181818;
+      z-index: 2;
+      transition: 1.5s;
+    }
+
+    section span:hover {
+      background: #0f0;
+      transition: 0s;
+    }
+
+    .form-container {
+      position: absolute;
+      width: 400px;
+      background: #222;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+      border-radius: 4px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.9);
+    }
+
+    .content {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    h2 {
+      font-size: 2em;
+      color: #0f0;
+      text-transform: uppercase;
+    }
+
+    .form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .inputBox {
+      position: relative;
+      width: 100%;
+    }
+
+    .inputBox input {
+      width: 100%;
+      background: #333;
+      border: none;
+      outline: none;
+      padding: 15px 10px;
+      border-radius: 4px;
+      color: #fff;
+      font-weight: 500;
+      font-size: 1em;
+    }
+
+    .inputBox i {
+      position: absolute;
+      left: 0;
+      padding: 15px 10px;
+      font-style: normal;
+      color: #aaa;
+      transition: 0.5s;
+      pointer-events: none;
+    }
+
+    .inputBox input:focus ~ i,
+    .inputBox input:valid ~ i {
+      transform: translateY(-7.5px);
+      font-size: 0.8em;
+      color: #fff;
+    }
+
+    .links {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .links a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .links a.signup-link {
+      color: #0f0;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .error {
+      color: red;
+      font-size: 0.9em;
+      text-align: center;
+      display: none;
+    }
+
+    input[type="submit"] {
+      padding: 10px;
+      background: #0f0;
+      color: #000;
+      font-weight: 600;
+      font-size: 1.2em;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:active {
+      opacity: 0.6;
+    }
+
+    /* Media Queries */
+    @media (max-width: 900px) {
+      section span {
+        width: calc(10vw - 2px);
+        height: calc(10vw - 2px);
+      }
+    }
+
+    @media (max-width: 600px) {
+      section span {
+        width: calc(20vw - 2px);
+        height: calc(20vw - 2px);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<section>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span>
+
+ <!-- Sign In Form -->
+<div class="form-container" id="signin-form">
+  <div class="content">
+    <h2>Sign In</h2>
+    <form action="/signin" method="POST">
+      <div class="inputBox">
+        <input type="email" name="email" required>
+        <i>Email</i>
+      </div>
+      <div class="inputBox">
+        <input type="password" name="password" required>
+        <i>Password</i>
+      </div>
+      <div class="error" id="signin-error">Incorrect username or password.</div>
+      <div class="links">
+        <a href="#">Forgot Password?</a>
+        <a class="signup-link" onclick="showSignup()">Sign Up</a>
+      </div>
+      <div class="inputBox">
+        <button type="submit">Sign In</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Sign Up Form -->
+<div class="form-container" id="signup-form" style="display: none;">
+  <div class="content">
+    <h2>Sign Up</h2>
+    <form action="/signup" method="POST">
+      <div class="inputBox">
+        <input type="text" name="name" required>
+        <i>Name</i>
+      </div>
+      <div class="inputBox">
+        <input type="email" name="email" required>
+        <i>Email</i>
+      </div>
+      <div class="inputBox">
+        <input type="password" name="password" required>
+        <i>Password</i>
+      </div>
+      <div class="error" id="signup-error">User already exists.</div>
+      <div class="links">
+        <a class="signin-link" onclick="showSignin()">Sign In</a>
+      </div>
+      <div class="inputBox">
+        <button type="submit">Sign Up</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+</section>
+
+<script>
+  // Function to show signup form
+  function showSignup() {
+    document.getElementById('signin-form').style.display = 'none';
+    document.getElementById('signup-form').style.display = 'block';
+  }
+
+  // Function to show signin form
+  function showSignin() {
+    document.getElementById('signup-form').style.display = 'none';
+    document.getElementById('signin-form').style.display = 'block';
+  }
+
+
+</script>
+
+</body>
+</html>
